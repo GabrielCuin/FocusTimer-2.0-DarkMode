@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #323238;
+  --text-dark-color: #ffffff;
+  --icon-active-color: #ffffff;
+  --control-dark-color: #c4c4cc;
+
+  --bg-color: #ffffff;
+  --bg-dark-color: #121214;
+  --bg-button-color: hsla(240, 9%, 89%, 1);
+  --bg-dark-button-color: hsla(240, 6%, 17%, 1);
+
+  --forest-color: #0e7203;
+  --rain-color: #02799d;
+  --coffee-color: #2b0000;
+  --clearing-color: #dc1802;
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color);
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: var(--text-color);
+
+  display: grid;
+
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  gap: 19.2rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6rem;
+}
+
+#themes button {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+
+#timer {
+  font-size: clamp(12.62rem, 12rem + 1rem, 14rem);
+  line-height: 14.8rem;
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+button svg path {
+  transition: fill 0.5s;
+}
+
+#controls button svg {
+  width: clamp(3.2rem, 2rem + 12vw, 4.8rem);
+  height: clamp(3.2rem, 2rem + 12vw, 4.8rem);
+}
+
+#sounds-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+#sounds-block button {
+  padding: 4.8rem auto;
+  background-color: var(--bg-button-color);
+  border-radius: 2.4rem;
+
+  width: 13.8rem;
+  height: 15.2rem;
+  transition: background 0.5s;
+}
+
+#sounds-block button:nth-child(1):hover,
+#sounds-block .forest {
+  background-color: var(--forest-color);
+}
+
+#sounds-block button:nth-child(2):hover,
+#sounds-block .rain {
+  background-color: var(--rain-color);
+}
+
+#sounds-block button:nth-child(3):hover,
+#sounds-block .coffee {
+  background-color: var(--coffee-color);
+}
+
+#sounds-block button:nth-child(4):hover,
+#sounds-block .clearing {
+  background-color: var(--clearing-color);
+}
+
+#sounds-block .forest svg path,
+#sounds-block .rain svg path,
+#sounds-block .coffee svg path,
+#sounds-block .clearing svg path,
+#sounds-block button:hover svg path {
+  fill: var(--icon-active-color);
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 3.8rem;
+  width: 9rem;
+  height: 0.4rem;
+  left: 77rem;
+  border-radius: 0.5rem;
+  background-color: var(--text-color);
+  transition: background-color 0.5s;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  transition: background-color 0.5s;
+}
+
+#sounds-block .forest .range::-webkit-slider-thumb,
+#sounds-block .forest .range,
+#sounds-block .rain .range::-webkit-slider-thumb,
+#sounds-block .rain .range,
+#sounds-block .coffee .range::-webkit-slider-thumb,
+#sounds-block .coffee .range,
+#sounds-block .clearing .range::-webkit-slider-thumb,
+#sounds-block .clearing .range,
+#sounds-block button:hover .range,
+#sounds-block button:hover .range::-webkit-slider-thumb {
+  background-color: var(--icon-active-color);
+}
+
+/* DarkMode */
+
+body.dark {
+  background-color: var(--bg-dark-color);
+}
+
+#timer.dark{
+  color: var(--text-dark-color);
+}
+
+#controls.dark button svg path,
+#sounds-block.dark button svg path{
+  fill: var(--control-dark-color)
+}
+
+#sounds-block.dark button {
+  background-color: var(--bg-dark-button-color);
+}
+
+#sounds-block.dark .forest svg path,
+#sounds-block.dark .rain svg path,
+#sounds-block.dark .coffee svg path,
+#sounds-block.dark .clearing svg path,
+#sounds-block.dark button:hover svg path {
+  fill: var(--icon-active-color);
+}
+
+#sounds-block.dark button:nth-child(1):hover,
+#sounds-block.dark .forest {
+  background-color: var(--forest-color);
+}
+
+#sounds-block.dark button:nth-child(2):hover,
+#sounds-block.dark .rain {
+  background-color: var(--rain-color);
+}
+
+#sounds-block.dark button:nth-child(3):hover,
+#sounds-block.dark .coffee {
+  background-color: var(--coffee-color);
+}
+
+#sounds-block.dark button:nth-child(4):hover,
+#sounds-block.dark .clearing {
+  background-color: var(--clearing-color);
+}
